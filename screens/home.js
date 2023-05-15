@@ -1,19 +1,15 @@
 import React from "react";
 import { View, Text, Button, StyleSheet } from "react-native";
+import globalStyles from "../styles/global";
 
-export default function Home() {
+export default function Home({ navigation }) {
+  const pressHandler = () => {
+    navigation.navigate("ReviewDetails");
+  };
   return (
-    <View style={styles.container}>
-      <Text style={styles.titleText}>Home Screen</Text>
+    <View style={globalStyles.container}>
+      <Text style={globalStyles.titleText}>Home Screen</Text>
+      <Button title="Go to review details" onPress={pressHandler} />
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    padding: 24,
-  },
-  titleText: {
-    fontFamily: "open-sans-bold",
-  },
-});

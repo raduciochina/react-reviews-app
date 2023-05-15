@@ -36,9 +36,7 @@ export default function Home({ navigation }) {
       key: "4",
     },
   ]);
-  const pressHandler = () => {
-    navigation.navigate("ReviewDetails");
-  };
+
   return (
     <View style={globalStyles.container}>
       <FlatList

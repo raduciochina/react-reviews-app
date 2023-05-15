@@ -4,11 +4,10 @@ import { StyleSheet, Text, View } from "react-native";
 import * as Font from "expo-font";
 import Home from "./screens/home";
 import AppLoading from "expo-app-loading";
-import Navigator from "./routes/homeStack";
+import Navigator from "./routes/drawer";
 
 const getFonts = () => {
   return Font.loadAsync({
-    // "open-sans-variable-font": require("./assets/fonts/OpenSans-VariableFont_wdth,wght.ttf"),
     "open-sans-regular": require("./assets/fonts/OpenSans-Regular.ttf"),
     "open-sans-bold": require("./assets/fonts/OpenSans-Bold.ttf"),
     "open-sans-italic": require("./assets/fonts/OpenSans-Italic.ttf"),

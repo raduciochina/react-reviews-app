@@ -1,38 +1,23 @@
-import { createStackNavigator } from "react-navigation-stack";
-import { createAppContainer } from "react-navigation";
-import Home from "../screens/home";
+import * as React from "react";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import ReviewDetails from "../screens/reviewDetails";
+import Home from "../screens/home";
+import CustomHeader from "../components/customHeader";
+import { Button } from "react-native";
 
-const screens = {
-  //first is the default screen
-  Home: {
-    screen: Home,
-    navigationOptions: {
-      title: "Movie Zone",
-      //   headerStyle: {
-      //     backgroundColor: "#eee",
-      //   },
-    },
-  },
-  ReviewDetails: {
-    screen: ReviewDetails,
-    navigationOptions: {
-      title: "Review Details",
-      //   headerStyle: {
-      //     backgroundColor: "#eee",
-      //   },
-    },
-  },
-};
+const HomeStack = createNativeStackNavigator();
 
-const HomeStack = createStackNavigator(screens, {
-  defaultNavigationOptions: {
-    headerStyle: {
-      backgroundColor: "#eee",
-      height: 80,
-    },
-    headerTintColor: "#444",
-  },
-});
+function HomeStackScreen() {
+  return (
+    <HomeStack.Navigator
+      screenOptions={{
+        header: () => <CustomHeader />,
+      }}
+    >
+      <HomeStack.Screen name="Home" component={Home} />
+      <HomeStack.Screen name="ReviewDetails" component={ReviewDetails} />
+    </HomeStack.Navigator>
+  );
+}
 
-export default createAppContainer(HomeStack);
+export default HomeStackScreen;

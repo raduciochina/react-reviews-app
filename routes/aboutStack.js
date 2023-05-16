@@ -1,9 +1,10 @@
 import * as React from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import About from "../screens/about";
+import { createStackNavigator } from "@react-navigation/stack";
 import CustomHeader from "../components/customHeader";
 
-const AboutStack = createNativeStackNavigator();
+const AboutStack = createStackNavigator();
 
 function AboutStackScreen() {
   return (

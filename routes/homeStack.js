@@ -1,11 +1,12 @@
 import * as React from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { createStackNavigator } from "@react-navigation/stack";
 import ReviewDetails from "../screens/reviewDetails";
 import Home from "../screens/home";
 import CustomHeader from "../components/customHeader";
 import { Button } from "react-native";
 
-const HomeStack = createNativeStackNavigator();
+const HomeStack = createStackNavigator();
 
 function HomeStackScreen() {
   return (
